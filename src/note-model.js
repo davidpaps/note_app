@@ -3,9 +3,6 @@
     this.text = note;
   };
 
-
- 
-
   Note.prototype.showNote = function() {
     return this.text;
   }
