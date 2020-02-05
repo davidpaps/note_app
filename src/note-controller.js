@@ -1,8 +1,25 @@
-function NoteController(){
-}
+(function(exports) {
 
+  function NoteController(){
 
-NoteController.prototype.greeting = function(greet) {
-  var x = document.getElementById('app');
-  x.innerHTML = greet;
-}
+    this.noteListView = new NoteListView();
+    this.noteList = this.noteListView.noteList;
+  }
+
+  NoteController.prototype.addNote = function(text) {
+    this.noteList.add(text);
+  }
+
+  NoteController.prototype.htmlify = function() {
+    return (this.noteListView.htmlString());
+  }
+
+  NoteController.prototype.insert = function() {
+    var message = this.htmlify();
+    var element = document.getElementById('app');
+    element.innerHTML = message;
+  }
+
+  exports.NoteController = NoteController;
+
+})(this);
