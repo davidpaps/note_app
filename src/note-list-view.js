@@ -7,7 +7,7 @@
 NoteListView.prototype.htmlString = function(){ 
   var array = ["<ul>"]
   for (var note = 0; note < this.noteList.list.length; note++) {
-    array.push("<li><div>" + this.noteList.list[note].showNote() + "</div></li>")
+    array.push("<li><div>" + this.noteList.list[note].showNote().slice(0,20) + "</div></li>")
   }
   array.push("</ul>");
   return array.join("");

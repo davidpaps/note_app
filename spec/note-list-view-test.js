@@ -7,7 +7,7 @@
 (function htmlString() {
   var noteListView = new NoteListView();
   var noteList = noteListView.noteList;
-  noteList.add("string one");
-  noteList.add("string two");
-  assert.isTrue(noteListView.htmlString() === "<ul><li><div>string one</div></li><li><div>string two</div></li></ul>");
+  noteList.add("123456789012345678901234567890");
+  noteList.add("A23456789012345678901234567890");
+  assert.isTrue(noteListView.htmlString() === "<ul><li><div>12345678901234567890</div></li><li><div>A2345678901234567890</div></li></ul>");
 })();
