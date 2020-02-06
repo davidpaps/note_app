@@ -22,13 +22,28 @@
  (function testInsert() {
     var noteController = new NoteController();
     noteController.addNote("test");
-    mockElement();
-    noteController.insert("app");
-    assert.isTrue(document.getElementById("app").innerHTML.includes("test"));
+    var fakeDiv = {
+      innerHTML: ""
+    }
+    var fakeDocument = {
+      getElementById: function(){
+        return fakeDiv
+      }
+    }
+    noteController.insert("app", fakeDocument);
+    assert.isTrue(fakeDiv.innerHTML.includes("test"));
  })();
 
- function mockElement() {
-    var element = document.createElement('div');
-    element.setAttribute('id', 'app');
-    document.body.appendChild(element)
- };
+//  (function testInsert() {
+//     var noteController = new NoteController();
+//     noteController.addNote("test");
+//     mockElement();
+//     noteController.insert("app");
+//     assert.isTrue(document.getElementById("app").innerHTML.includes("test"));
+//  })();
+
+//  function mockElement() {
+//     var element = document.createElement('div');
+//     element.setAttribute('id', 'app');
+//     document.body.appendChild(element)
+//  };
