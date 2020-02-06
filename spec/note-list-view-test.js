@@ -1,6 +1,6 @@
 (function testNoteListView() {
- var noteListView = new NoteListView();
- assert.isTrue(noteListView.noteList instanceof NoteList);
+  var noteListView = new NoteListView();
+  assert.isTrue(noteListView.noteList instanceof NoteList);
 })();
 
 
