@@ -14,9 +14,9 @@
     return (this.noteListView.htmlString());
   }
 
-  NoteController.prototype.insert = function() {
+  NoteController.prototype.insert = function(divId) {
     var message = this.htmlify();
-    var element = document.getElementById('app');
+    var element = document.getElementById(divId);
     element.innerHTML = message;
   }
 
