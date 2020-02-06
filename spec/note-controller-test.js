@@ -24,13 +24,13 @@
     innerHTML: ""
   }
   var fakeDocument = {
-    getElementById: function(){
+    getElementById: function(divId){
       return fakeDiv
     }
   }
     var noteController = new NoteController(fakeDocument);
     noteController.addNote("test");
-    noteController.insert("app");
+    noteController.insert('app');
     assert.isTrue(fakeDiv.innerHTML.includes("test"));
  })();
 
