@@ -20,17 +20,17 @@
  })();
 
  (function testInsert() {
-    var noteController = new NoteController();
+  var fakeDiv = {
+    innerHTML: ""
+  }
+  var fakeDocument = {
+    getElementById: function(){
+      return fakeDiv
+    }
+  }
+    var noteController = new NoteController(fakeDocument);
     noteController.addNote("test");
-    var fakeDiv = {
-      innerHTML: ""
-    }
-    var fakeDocument = {
-      getElementById: function(){
-        return fakeDiv
-      }
-    }
-    noteController.insert("app", fakeDocument);
+    noteController.insert("app");
     assert.isTrue(fakeDiv.innerHTML.includes("test"));
  })();
 

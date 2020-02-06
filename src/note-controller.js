@@ -1,9 +1,10 @@
 (function(exports) {
 
-  function NoteController(){
+  function NoteController(doc = document){
 
     this.noteListView = new NoteListView();
     this.noteList = this.noteListView.noteList;
+    this.doc = doc;
   }
 
   NoteController.prototype.addNote = function(text) {
@@ -14,9 +15,9 @@
     return (this.noteListView.htmlString());
   }
 
-  NoteController.prototype.insert = function(divId, document = document) {
+  NoteController.prototype.insert = function(divId) {
     var message = this.htmlify();
-    var element = document.getElementById(divId);
+    var element = this.doc.getElementById(divId);
     element.innerHTML = message;
   }
 
