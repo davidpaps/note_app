@@ -16,7 +16,7 @@
  (function testHtmlify() {
     var noteController = new NoteController();
     noteController.addNote("test");
-    assert.isTrue(noteController.htmlify() === "<ul><li><div>test</div></li></ul>");
+    assert.isTrue(noteController.htmlify() === "<ul><li><div><a href='#0'>test</a></div></li></ul>");
  })();
 
  (function testInsert() {

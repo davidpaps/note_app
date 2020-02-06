@@ -5,10 +5,12 @@
 
 (function testAddNote() {
   var noteList = new NoteList();
-  var note = new Note();
-  noteList.add(note);
-  assert.isTrue(noteList.list.length === 1);
+  noteList.add("abcd");
+  noteList.add("efgh");
+  assert.isTrue(noteList.list.length === 2);
   assert.isTrue(noteList.list[0] instanceof Note);
+  assert.isTrue(noteList.list[0].id === 0);
+  assert.isTrue(noteList.list[1].id === 1);
 })();
 
 (function testShowNote() {

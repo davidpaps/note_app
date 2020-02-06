@@ -9,5 +9,5 @@
   var noteList = noteListView.noteList;
   noteList.add("123456789012345678901234567890");
   noteList.add("A23456789012345678901234567890");
-  assert.isTrue(noteListView.htmlString() === "<ul><li><div>12345678901234567890</div></li><li><div>A2345678901234567890</div></li></ul>");
+  assert.isTrue(noteListView.htmlString() === "<ul><li><div><a href='#0'>12345678901234567890</a></div></li><li><div><a href='#1'>A2345678901234567890</a></div></li></ul>");
 })();
