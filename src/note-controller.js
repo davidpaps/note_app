@@ -24,3 +24,33 @@
   exports.NoteController = NoteController;
 
 })(this);
+
+
+var noteController = new NoteController();
+
+noteController.addNote("sadlfhasglhkjsadhkjdgsh;kg");
+noteController.addNote("1235hassdajfhkjlsadjdgsh;kg");
+
+noteController.insert();
+  
+makeUrlChangeShowNoteOnCurrentPage();
+
+function makeUrlChangeShowNoteOnCurrentPage() {
+  window.addEventListener("hashchange", showNoteOnCurrentPage);
+}
+
+function showNoteOnCurrentPage() {
+
+  showNote(getIDFromUrl(window.location));
+}
+
+function getIDFromUrl(location) {
+  return location.hash.split("#")[1];
+}
+
+function showNote(ID) {
+
+  document
+    .getElementById("app")
+    .innerHTML = noteController.noteList.showNotelist()[ID].showNote();
+}
