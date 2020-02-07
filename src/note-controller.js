@@ -25,30 +25,22 @@
 
 })(this);
 
-
-var noteController = new NoteController();
-
-noteController.addNote("This is the first note to see");
-noteController.addNote("This is the second note to see");
-console.log(noteController)
-noteController.insert();
   
-makeUrlChangeShowNoteOnCurrentPage();
-
-function makeUrlChangeShowNoteOnCurrentPage() {
+(function makeUrlChangeShowNoteOnCurrentPage() {
   window.addEventListener("hashchange", showNoteOnCurrentPage);
-}
 
-function showNoteOnCurrentPage() {
-  showNote(getIDFromUrl(window.location));
-}
+  function showNoteOnCurrentPage() {
+    showNote(getIDFromUrl(window.location));
+  }
+  
+  function getIDFromUrl(location) {
+    return location.hash.split("#")[1];
+  }
+  
+  function showNote(ID) {
+    document
+      .getElementById("app")
+      .innerHTML = noteController.noteList.showNotelist()[ID].showNote();
+  }
 
-function getIDFromUrl(location) {
-  return location.hash.split("#")[1];
-}
-
-function showNote(ID) {
-  document
-    .getElementById("app")
-    .innerHTML = noteController.noteList.showNotelist()[ID].showNote();
-}
+})();

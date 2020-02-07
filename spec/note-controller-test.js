@@ -34,16 +34,16 @@
     assert.isTrue(fakeDiv.innerHTML.includes("test"));
  })();
 
-//  (function testInsert() {
-//     var noteController = new NoteController();
-//     noteController.addNote("test");
-//     mockElement();
-//     noteController.insert("app");
-//     assert.isTrue(document.getElementById("app").innerHTML.includes("test"));
-//  })();
+ (function testInsert() {
+    var noteController = new NoteController();
+    noteController.addNote("test");
+    mockElement();
+    noteController.insert("app");
+    assert.isTrue(document.getElementById("app").innerHTML.includes("test"));
+ })();
 
-//  function mockElement() {
-//     var element = document.createElement('div');
-//     element.setAttribute('id', 'app');
-//     document.body.appendChild(element)
-//  };
+ function mockElement() {
+    var element = document.createElement('div');
+    element.setAttribute('id', 'app');
+    document.body.appendChild(element)
+ };
