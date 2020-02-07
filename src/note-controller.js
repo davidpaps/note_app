@@ -28,9 +28,9 @@
 
 var noteController = new NoteController();
 
-noteController.addNote("sadlfhasglhkjsadhkjdgsh;kg");
-noteController.addNote("1235hassdajfhkjlsadjdgsh;kg");
-
+noteController.addNote("This is the first note to see");
+noteController.addNote("This is the second note to see");
+console.log(noteController)
 noteController.insert();
   
 makeUrlChangeShowNoteOnCurrentPage();
@@ -40,7 +40,6 @@ function makeUrlChangeShowNoteOnCurrentPage() {
 }
 
 function showNoteOnCurrentPage() {
-
   showNote(getIDFromUrl(window.location));
 }
 
@@ -49,7 +48,6 @@ function getIDFromUrl(location) {
 }
 
 function showNote(ID) {
-
   document
     .getElementById("app")
     .innerHTML = noteController.noteList.showNotelist()[ID].showNote();
