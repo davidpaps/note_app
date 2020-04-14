@@ -1,27 +1,47 @@
 # Note App
 
-Installing Node from Terminal Check if there's a version installed: 
+This was the Week 7 afternoon challenge from Makers. It involved test driving a single page JavaScript app from scratch - using my own test library (no Jasmine). The idea of TDD was starting to sink in, but now we had to used our own 'assertion' based library bases on the truthy-ness and falsey-ness of a statement.
+
+The app allows a user to enter a note, this will then be added in a clickable link that will have a 20 character limit. If the link is clicked it will display the whole message. This is done with no page refreshing, and displays a URL change in the browser link for functionality.
+
+---
+
+## How to Run:
+
+Clone this repo, from the command line navigate to the root directory and in the command line check to see if you ahave node.js installed on yout machine by typing:
+
 ```
 $ node -v
 ```
 
-If not, install:
+If not, install it by typing in the following command:
 
 ```
-$ brew install node 
+brew install node
 ```
 
-Initialize Node with Http-Server library from the top level of the project's directory:
+Now we want to initialize Node with the Http-Server library. From the root directory, in the command line type:
 
 ```
-$ cd projectfolder/
-$ npm install http-server --save
+npm install http-server --save
 ```
 
-Running the server from command line:
+You can now run the local server from command line by typing:
 
 ```
 node node_modules/http-server/bin/http-server
 ```
 
-...and visit: localhost://8080
+Then visit: [_localhost://8080_](http://localhost:8080/)
+
+---
+
+## How to Run Tests
+
+To run the homeade test suite, in the root directory, right click on the [\*specRunner.html](specRunner.html) file and click `Copy Path`. Pase this into the Google Chrome Browser's URL, then open the Chrome Dev Tools (right click, click on `inspect`).
+
+Then navigate to the `console' tab of the Dev tools, you will here 16 tests passing.
+
+---
+
+<img src=" " />
