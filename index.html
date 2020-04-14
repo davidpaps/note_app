@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 
 <html>
-  <head> </head>
+  <head>
+    <h1>Notes:</h1>
+  </head>
 
   <body>
     <div id="app"></div>
 
-    <h2>New Note</h2>
+    <h2>Add a New Note Below:</h2>
 
-    <form id="text" action="#" method="post">
+    <form id="text" action="#new" method="post">
       <textarea
         name="newnote"
         rows="4"
@@ -26,10 +28,5 @@
     <script src="src/assert.js"></script>
     <script src="src/note-controller.js"></script>
     <script src="src/single-note-view.js"></script>
-
-    <script>
-      var note = new NoteController();
-      note.listenForSubmit();
-    </script>
   </body>
 </html>
