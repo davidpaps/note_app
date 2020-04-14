@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 
 <html>
-
-  <head>
-  
-  </head>
+  <head> </head>
 
   <body>
-
-    <div id="app">
-      hello
-    </div>
+    <div id="app"></div>
 
     <h2>New Note</h2>
 
-    <form id="text" action="#new" method="post">
-      <textarea name="newnote" rows="4" cols="50" maxlength="200" placeholder="Enter Note Here:" required ></textarea>
-      <input type="submit" value="submit">
-    </form> 
-
+    <form id="text" action="#" method="post">
+      <textarea
+        name="newnote"
+        rows="4"
+        cols="50"
+        maxlength="200"
+        placeholder="Enter Note Here:"
+        required
+      ></textarea>
+      <input type="submit" value="Submit" />
+    </form>
 
     <script src="src/note-model.js"></script>
     <script src="src/note-list-model.js"></script>
@@ -27,7 +27,9 @@
     <script src="src/note-controller.js"></script>
     <script src="src/single-note-view.js"></script>
 
-
+    <script>
+      var note = new NoteController();
+      note.listenForSubmit();
+    </script>
   </body>
-  
 </html>
