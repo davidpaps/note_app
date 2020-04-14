@@ -29,21 +29,14 @@
     });
   };
 
+  NoteController.prototype.showNoteOnClick = function () {
+    var model = this.noteList;
+    window.addEventListener("hashchange", () => {
+      var noteId = location.hash.split("#")[1];
+      var text = model.list[noteId].text;
+      document.getElementById("app").innerHTML = text;
+    });
+  };
+
   exports.NoteController = NoteController;
 })(this);
-
-(function makeUrlChangeShowNoteOnCurrentPage() {
-  window.addEventListener("hashchange", showNoteOnCurrentPage);
-
-  function showNoteOnCurrentPage() {
-    showNote(getIDFromUrl(window.location));
-  }
-  function getIDFromUrl(location) {
-    return location.hash.split("#")[1];
-  }
-  function showNote(ID) {
-    document.getElementById("app").innerHTML = note.noteList
-      .showNotelist(ID)
-      [ID].showNote();
-  }
-})();
